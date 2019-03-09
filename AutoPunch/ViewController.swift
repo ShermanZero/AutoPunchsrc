@@ -97,7 +97,6 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     func setUserDefaults() {
         UserDefaults.standard.set(usernameText.text, forKey: "username")
         UserDefaults.standard.set(passwordText.text, forKey: "password")
-        
         UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
     }
     
@@ -112,7 +111,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadCount += 1
-        print(loadCount)
+       
+        webView.evaluateJavaScript("document.body.innerHTML") { (string, error) in print(string!) }
         
         if (loadCount == 1) {
             if (!login()) {
@@ -166,25 +166,16 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     func login() -> Bool {
-        var js = ""
-        
-        js = "var login=document.getElementById(\"loginField\"); login.value=\"a" + usernameText.text! + "\";"
-        webView.evaluateJavaScript(js, completionHandler: nil)
-        
-        js = "var password=document.getElementById(\"passwordField\"); password.value=\"" + passwordText.text! + "\";"
-        webView.evaluateJavaScript(js, completionHandler: nil)
-        
-        js = "var submit=document.getElementById(\"submitButton\"); submit.click();"
-        webView.evaluateJavaScript(js, completionHandler: nil)
-        
+        doJavaScript(script: "var login=document.getElementById(\"loginField\"); login.value=\"a" + usernameText.text! + "\";")
+        doJavaScript(script: "var password=document.getElementById(\"passwordField\"); password.value=\"" + passwordText.text! + "\";")
+        doJavaScript(script: "var submit=document.getElementById(\"submitButton\"); submit.click();")
+    
         return true
     }
     
     func punchIn() {
-        let js = "var punchIn=document.getElementsByName(\"Clock_On_Button\");punchIn[0].click();"
-        
         if(punch) {
-           webView.evaluateJavaScript(js, completionHandler: nil)
+            doJavaScript(script: "var punchIn=document.getElementsByName(\"Clock_On_Button\");punchIn[0].click();")
         }
         
         let date = Date()
@@ -198,10 +189,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     func punchOut() {
-        let js = "var punchOut=document.getElementsByName(\"Clock_Off_Button\");punchOut[0].click();"
-        
         if(punch) {
-            webView.evaluateJavaScript(js, completionHandler: nil)
+            doJavaScript(script: "var punchOut=document.getElementsByName(\"Clock_Off_Button\");punchOut[0].click();")
         }
 
         let date = Date()
@@ -215,9 +204,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     func logout() {
-        let js = "var logout=document.getElementsByName(\"Logout_Button\");logout[0].click();"
-        
-        webView.evaluateJavaScript(js, completionHandler: nil)
+        doJavaScript(script: "var logout=document.getElementsByName(\"Logout_Button\");logout[0].click();")
+    }
+    
+    func doJavaScript(script: String) {
+        webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
     func generateNotification(title: String, body: String) {
