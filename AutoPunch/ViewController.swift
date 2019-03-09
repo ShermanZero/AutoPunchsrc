@@ -17,14 +17,19 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     
     @IBOutlet weak var powerButton: UIButton!
     @IBOutlet weak var clockSwitch: UISwitch!
+    @IBOutlet weak var punchSwitch: UISwitch!
     @IBOutlet weak var authorizeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    
+    @IBOutlet weak var punchSwitchLabel: UILabel!
     
     @IBOutlet weak var webView: WKWebView!
     
     var loadCount = 0
     let MAXLOAD = 4
-    let punch = true
+    var punch = true
+    
+    var developerMode = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +52,19 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
-
+    
+    @IBAction func titlePressed(_ sender: Any) {
+        developerMode += 1
+        
+        if(developerMode >= 3) {
+            showDevTools()
+        }
+    }
+    
+    @IBAction func punchSwitchToggled(_ sender: Any) {
+        punch = punchSwitch.isOn
+    }
+    
     @IBAction func authorizePressed(_ sender: Any) {
         setUserDefaults()
         hideKeyboard()
@@ -70,6 +87,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         
         let url = URL(string: "https://tlcmobile.bestbuy.com/mobileClock/")
         webView.load(URLRequest(url: url!))
+    }
+    
+    func showDevTools() {
+        punchSwitch.isHidden = false
+        punchSwitchLabel.isHidden = false
     }
     
     func setUserDefaults() {

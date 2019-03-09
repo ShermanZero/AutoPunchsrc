@@ -18,36 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yo-WU-SMO" userLabel="usernameText">
-                                <rect key="frame" x="50" y="169" width="275" height="30"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" textContentType="username"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awz-mL-F5H" userLabel="authorizeButton">
-                                <rect key="frame" x="50" y="249" width="275" height="30"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="authorize">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJE-ze-SLA"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2H-mJ-fkz" userLabel="resetButton">
-                                <rect key="frame" x="50" y="249" width="275" height="30"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="reset">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aus-WK-0Hx"/>
-                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EqE-nF-tBT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-gP-IQe">
+                                <rect key="frame" x="25" y="191" width="325" height="110"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yo-WU-SMO" userLabel="usernameText">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" textContentType="username"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQW-Oe-R6V" userLabel="passwordText">
+                                        <rect key="frame" x="0.0" y="40" width="325" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awz-mL-F5H" userLabel="authorizeButton">
+                                        <rect key="frame" x="0.0" y="80" width="325" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="authorize">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJE-ze-SLA"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2H-mJ-fkz" userLabel="resetButton">
+                                        <rect key="frame" x="0.0" y="110" width="325" height="0.0"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aus-WK-0Hx"/>
+                                            <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EqE-nF-tBT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7y-EM-bSi" userLabel="powerButton">
                                 <rect key="frame" x="139.66666666666666" y="358" width="96" height="96"/>
                                 <state key="normal" image="powerButton"/>
@@ -55,7 +67,7 @@
                                     <action selector="powerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fyo-S8-kjI"/>
                                 </connections>
                             </button>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVM-5d-MTf" userLabel="switch">
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVM-5d-MTf" userLabel="clockSwitch">
                                 <rect key="frame" x="163" y="474" width="51" height="31"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,57 +76,62 @@
                                     <action selector="clockToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="AhB-wP-IDi"/>
                                 </connections>
                             </switch>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setPunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-yS-TyN">
+                                <rect key="frame" x="53" y="509.66666666666669" width="53" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McI-cV-QpZ" userLabel="punchSwitch">
+                                <rect key="frame" x="54" y="529" width="51" height="31"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="clockToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="N3U-vw-xGq"/>
+                                    <action selector="punchSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="4UU-Np-zwp"/>
+                                </connections>
+                            </switch>
                             <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdl-q7-gtR">
-                                <rect key="frame" x="0.0" y="525" width="375" height="287"/>
+                                <rect key="frame" x="0.0" y="580" width="375" height="232"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOPUNCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAk-o5-kuL">
-                                <rect key="frame" x="62.000000000000014" y="94" width="251.33333333333337" height="54.666666666666657"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEz-OX-Del">
+                                <rect key="frame" x="87.666666666666686" y="94" width="200" height="67"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQW-Oe-R6V" userLabel="passwordText">
-                                <rect key="frame" x="50" y="209" width="275" height="30"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
+                                <state key="normal" title="AutoPunch">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="titlePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXw-FR-NzW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ot-gP-IQe" secondAttribute="trailing" constant="25" id="1d0-gZ-eVf"/>
                             <constraint firstItem="n7y-EM-bSi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1kF-1a-qXj"/>
-                            <constraint firstItem="nQW-Oe-R6V" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="2Q9-hg-rhp"/>
-                            <constraint firstItem="Awz-mL-F5H" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="4fI-OG-Bgt"/>
-                            <constraint firstItem="Awz-mL-F5H" firstAttribute="top" secondItem="nQW-Oe-R6V" secondAttribute="bottom" constant="10" id="4gZ-bM-dsn"/>
+                            <constraint firstItem="McI-cV-QpZ" firstAttribute="top" secondItem="Oj3-yS-TyN" secondAttribute="bottom" constant="5" id="4dS-Oe-BSK"/>
+                            <constraint firstItem="MVM-5d-MTf" firstAttribute="leading" secondItem="McI-cV-QpZ" secondAttribute="trailing" constant="60" id="5K2-Vq-ue8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oj3-yS-TyN" secondAttribute="trailing" constant="269" id="7Xm-25-eWX"/>
                             <constraint firstItem="n7y-EM-bSi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A44-9m-vhC"/>
-                            <constraint firstItem="S2H-mJ-fkz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aax-TK-qOu"/>
                             <constraint firstItem="MVM-5d-MTf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gfl-SZ-wP7"/>
                             <constraint firstItem="MVM-5d-MTf" firstAttribute="top" secondItem="n7y-EM-bSi" secondAttribute="bottom" constant="20" id="Gur-1r-ydg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Awz-mL-F5H" secondAttribute="trailing" constant="50" id="HPF-5z-Vzl"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hdy-RH-pZR"/>
-                            <constraint firstItem="4yo-WU-SMO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="JN4-Vw-kFY"/>
-                            <constraint firstItem="4yo-WU-SMO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KSW-PX-oTQ"/>
-                            <constraint firstItem="4yo-WU-SMO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Rpc-5z-KeC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nQW-Oe-R6V" secondAttribute="trailing" constant="50" id="TYJ-GF-ban"/>
+                            <constraint firstItem="vEz-OX-Del" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Nnu-9G-zeL"/>
+                            <constraint firstItem="8ot-gP-IQe" firstAttribute="top" secondItem="vEz-OX-Del" secondAttribute="bottom" constant="30" id="O47-kK-qhl"/>
                             <constraint firstAttribute="trailing" secondItem="Pdl-q7-gtR" secondAttribute="trailing" id="Ugd-PG-SPa"/>
                             <constraint firstAttribute="bottom" secondItem="Pdl-q7-gtR" secondAttribute="bottom" id="XUB-xn-d31"/>
-                            <constraint firstItem="nQW-Oe-R6V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bAf-vB-fjz"/>
-                            <constraint firstItem="Awz-mL-F5H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cAt-vF-poa"/>
-                            <constraint firstItem="S2H-mJ-fkz" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="erG-AO-d1T"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="S2H-mJ-fkz" secondAttribute="trailing" constant="50" id="hn5-qo-xHA"/>
-                            <constraint firstItem="nQW-Oe-R6V" firstAttribute="top" secondItem="4yo-WU-SMO" secondAttribute="bottom" constant="10" id="iud-Gt-DNI"/>
+                            <constraint firstItem="8ot-gP-IQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="bgg-bE-hiY"/>
+                            <constraint firstItem="Oj3-yS-TyN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="ccD-rq-Ckv"/>
+                            <constraint firstItem="vEz-OX-Del" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jCt-VP-koP"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kPY-te-1Zm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4yo-WU-SMO" secondAttribute="trailing" constant="50" id="ksV-vk-2TF"/>
-                            <constraint firstItem="S2H-mJ-fkz" firstAttribute="top" secondItem="nQW-Oe-R6V" secondAttribute="bottom" constant="10" id="rxO-fY-RYa"/>
-                            <constraint firstItem="xAk-o5-kuL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sYl-Ib-c1J"/>
-                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="MVM-5d-MTf" secondAttribute="bottom" constant="20" id="v08-JZ-AH0"/>
-                            <constraint firstItem="xAk-o5-kuL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x2W-wB-N0C"/>
+                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="McI-cV-QpZ" secondAttribute="bottom" constant="20" id="ryv-Rf-VrH"/>
+                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="MVM-5d-MTf" secondAttribute="bottom" constant="75" id="v08-JZ-AH0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -123,6 +140,8 @@
                         <outlet property="clockSwitch" destination="MVM-5d-MTf" id="yO2-UL-cBR"/>
                         <outlet property="passwordText" destination="nQW-Oe-R6V" id="ewp-eL-WCH"/>
                         <outlet property="powerButton" destination="n7y-EM-bSi" id="yMj-7B-KHB"/>
+                        <outlet property="punchSwitch" destination="McI-cV-QpZ" id="DDR-D6-VHk"/>
+                        <outlet property="punchSwitchLabel" destination="Oj3-yS-TyN" id="8Qn-ej-Ca2"/>
                         <outlet property="resetButton" destination="S2H-mJ-fkz" id="KwG-RO-ica"/>
                         <outlet property="usernameText" destination="4yo-WU-SMO" id="C97-c1-e7e"/>
                         <outlet property="webView" destination="Pdl-q7-gtR" id="fD8-5N-OpR"/>
