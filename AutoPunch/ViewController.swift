@@ -32,9 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     //does on load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        authorizeButton.layer.cornerRadius = 4
-        resetButton.layer.cornerRadius = 4
+
+        updateUI()
         
         nH = NotificationHandler()
         jS = JavaScriptHandler(viewController: self, notificationHandler: nH!)
@@ -60,6 +59,15 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         
         //request access to notifications
         nH?.requestNotificationAccess()
+    }
+    
+    //updates various elements of the UI for a "prettier" look
+    func updateUI() {
+        usernameText.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        passwordText.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        authorizeButton.layer.cornerRadius = 4
+        resetButton.layer.cornerRadius = 4
     }
     
     //when the user presses the title (enabling dev mode)
