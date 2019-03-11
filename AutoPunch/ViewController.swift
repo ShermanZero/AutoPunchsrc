@@ -142,14 +142,6 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         return true
     }
     
-    //sets user defaults
-    func setUserDefaults() {
-        UserDefaults.standard.set(usernameText.text, forKey: "username")
-        UserDefaults.standard.set(passwordText.text, forKey: "password")
-        UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
-        UserDefaults.standard.set(punchSwitch.isOn, forKey: "punch")
-    }
-    
     //hides the on-screen keyboard
     func hideKeyboard() {
         self.view.endEditing(true)
@@ -186,6 +178,14 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     func hideDevTools() {
         punchSwitch.isHidden = true
         punchSwitchLabel.isHidden = true
+    }
+    
+    //sets user defaults
+    func setUserDefaults() {
+        UserDefaults.standard.set(usernameText.text, forKey: "username")
+        UserDefaults.standard.set(passwordText.text, forKey: "password")
+        UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
+        UserDefaults.standard.set(punchSwitch.isOn, forKey: "punch")
     }
     
     //clears the saved user defaults
