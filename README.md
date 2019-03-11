@@ -1,4 +1,4 @@
-# AutoPunchsrc v1.0
+# AutoPunchsrc v1.1
 
 Welcome to **AutoPunch**, the tool designed for Best Buy employees tired of going through the long and boring punch-in/punch-out process of TLC.  With **AutoPunch**, you press one button and the rest is done for you.
 
