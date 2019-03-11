@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import UserNotifications
 
-class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
@@ -19,12 +19,15 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     @IBOutlet weak var powerButton: UIButton!
     @IBOutlet weak var clockSwitch: UISwitch!
     @IBOutlet weak var punchSwitch: UISwitch!
+    @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var punchSwitchLabel: UILabel!
+    @IBOutlet weak var notificationSwitchLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     
     private var loadCount = 0
     private let MAXLOAD = 4
-    private var developerMode = 0
+    private var developerModeCount = 0
+    private var isDeveloperMode = UserDefaults.standard.bool(forKey: "developer")
     
     private var nH:NotificationHandler?
     private var jS:JavaScriptHandler?
@@ -35,7 +38,9 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
 
         updateUI()
         
-        nH = NotificationHandler()
+        UserDefaults.standard.register(defaults: ["punch" : true])
+        
+        nH = NotificationHandler(viewController: self)
         jS = JavaScriptHandler(viewController: self, notificationHandler: nH!)
         
         passwordText.delegate = self
@@ -43,8 +48,6 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         
         let username = UserDefaults.standard.string(forKey: "username")
         let password = UserDefaults.standard.string(forKey: "password")
-        clockSwitch.isOn = UserDefaults.standard.bool(forKey: "clock")
-        
         if (username != nil && password != nil)
         {
             usernameText.text = username
@@ -53,12 +56,24 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
             showTools()
         }
         
-        if(UserDefaults.standard.bool(forKey: "developer")) {
+        if(isDeveloperMode) {
             showDevTools()
         }
         
         //request access to notifications
         nH?.requestNotificationAccess()
+    }
+    
+    //handles if a notification was accepted or declined
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if (response.actionIdentifier == "PUNCH_IN") {
+            clockSwitch.isOn = true
+            powerButtonPressed(self)
+        } else if (response.actionIdentifier == "PUNCH_OUT") {
+            clockSwitch.isOn = false
+            powerButtonPressed(self)
+        }
     }
     
     //updates various elements of the UI for a "prettier" look
@@ -70,13 +85,21 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         resetButton.layer.cornerRadius = 4
     }
     
-    //when the user presses the title (enabling dev mode)
+    //when the user presses the title (enabling/disabling dev mode)
     @IBAction func titlePressed(_ sender: Any) {
-        developerMode += 1
+        developerModeCount += 1
         
-        if(developerMode >= 3) {
-            showDevTools()
-            UserDefaults.standard.set(true, forKey: "developer")
+        if(developerModeCount >= 3) {
+            if(isDeveloperMode) {
+                hideDevTools()
+            } else {
+                showDevTools()
+            }
+            
+            isDeveloperMode = !isDeveloperMode
+            developerModeCount = 0
+            
+            UserDefaults.standard.set(isDeveloperMode, forKey: "developer")
         }
     }
     
@@ -87,6 +110,17 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     
     //when the user toggles the clock switch
     @IBAction func clockSwitchToggled(_ sender: Any) {
+        setUserDefaults()
+    }
+    
+    //changes whether or not to display notifications
+    @IBAction func notificationSwitchToggled(_ sender: Any) {
+        if(notificationSwitch.isOn) {
+            nH?.setTimedNotifications()
+        } else {
+            nH?.clearTimedNotifications()
+        }
+        
         setUserDefaults()
     }
     
@@ -169,12 +203,19 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         resetButton.isHidden = false
         powerButton.isHidden = false
         clockSwitch.isHidden = false
+        
+        clockSwitch.isOn = UserDefaults.standard.bool(forKey: "clock")
     }
     
     //shows the dev tools
     func showDevTools() {
         punchSwitch.isHidden = false
         punchSwitchLabel.isHidden = false
+        notificationSwitch.isHidden = false
+        notificationSwitchLabel.isHidden = false
+        
+        punchSwitch.isOn = UserDefaults.standard.bool(forKey: "punch")
+        notificationSwitch.isOn = UserDefaults.standard.bool(forKey: "notifications")
     }
     
     //hides the standard tools
@@ -189,6 +230,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     func hideDevTools() {
         punchSwitch.isHidden = true
         punchSwitchLabel.isHidden = true
+        notificationSwitch.isHidden = true
+        notificationSwitchLabel.isHidden = true
     }
     
     //sets user defaults
@@ -197,6 +240,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         UserDefaults.standard.set(passwordText.text, forKey: "password")
         UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
         UserDefaults.standard.set(punchSwitch.isOn, forKey: "punch")
+        UserDefaults.standard.set(notificationSwitch.isOn, forKey: "notifications")
     }
     
     //clears the saved user defaults
@@ -205,6 +249,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         UserDefaults.standard.set(nil, forKey: "password")
         UserDefaults.standard.set(true, forKey: "clock")
         UserDefaults.standard.set(true, forKey: "punch")
+        UserDefaults.standard.set(false, forKey: "notifications")
         UserDefaults.standard.set(false, forKey: "developer")
         
         hideTools()

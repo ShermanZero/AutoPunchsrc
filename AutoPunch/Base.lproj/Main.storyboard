@@ -85,19 +85,35 @@
                                     <action selector="clockSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="m2r-fG-ZbA"/>
                                 </connections>
                             </switch>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setPunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-yS-TyN">
-                                <rect key="frame" x="53" y="454.66666666666669" width="53" height="14.333333333333314"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setPunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-yS-TyN" userLabel="PunchSwitch Label">
+                                <rect key="frame" x="53" y="504.66666666666669" width="53" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McI-cV-QpZ" userLabel="punchSwitch">
-                                <rect key="frame" x="54" y="474" width="51" height="31"/>
+                                <rect key="frame" x="54" y="524" width="51" height="31"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="punchSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="tr4-0Y-weD"/>
+                                </connections>
+                            </switch>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setNot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFj-pL-jwW" userLabel="Notifications Label">
+                                <rect key="frame" x="261" y="503.66666666666669" width="70" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="E3L-gd-Rls" userLabel="notificationsSwitch">
+                                <rect key="frame" x="272" y="524" width="51" height="31"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="onTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="notificationSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="bg5-KJ-6wr"/>
+                                    <action selector="punchSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="y8y-bN-SPo"/>
                                 </connections>
                             </switch>
                             <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdl-q7-gtR">
@@ -108,27 +124,41 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLJ-JT-h8L">
+                                <rect key="frame" x="0.0" y="578" width="375" height="2"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ot-gP-IQe" secondAttribute="trailing" constant="25" id="1d0-gZ-eVf"/>
                             <constraint firstItem="n7y-EM-bSi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1kF-1a-qXj"/>
+                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="E3L-gd-Rls" secondAttribute="bottom" constant="25" id="3l3-oT-AfT"/>
                             <constraint firstItem="McI-cV-QpZ" firstAttribute="top" secondItem="Oj3-yS-TyN" secondAttribute="bottom" constant="5" id="4dS-Oe-BSK"/>
                             <constraint firstItem="MVM-5d-MTf" firstAttribute="leading" secondItem="McI-cV-QpZ" secondAttribute="trailing" constant="60" id="5K2-Vq-ue8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oj3-yS-TyN" secondAttribute="trailing" constant="269" id="7Xm-25-eWX"/>
+                            <constraint firstItem="E3L-gd-Rls" firstAttribute="top" secondItem="uFj-pL-jwW" secondAttribute="bottom" constant="6" id="7jO-qt-hNU"/>
+                            <constraint firstItem="SLJ-JT-h8L" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="91l-6w-Gpg"/>
                             <constraint firstItem="n7y-EM-bSi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A44-9m-vhC"/>
                             <constraint firstItem="MVM-5d-MTf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gfl-SZ-wP7"/>
                             <constraint firstItem="MVM-5d-MTf" firstAttribute="top" secondItem="n7y-EM-bSi" secondAttribute="bottom" constant="20" id="Gur-1r-ydg"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hdy-RH-pZR"/>
                             <constraint firstItem="vEz-OX-Del" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Nnu-9G-zeL"/>
                             <constraint firstItem="8ot-gP-IQe" firstAttribute="top" secondItem="vEz-OX-Del" secondAttribute="bottom" constant="30" id="O47-kK-qhl"/>
+                            <constraint firstItem="E3L-gd-Rls" firstAttribute="top" secondItem="uFj-pL-jwW" secondAttribute="bottom" constant="6" id="SGo-oP-xhe"/>
                             <constraint firstAttribute="trailing" secondItem="Pdl-q7-gtR" secondAttribute="trailing" id="Ugd-PG-SPa"/>
+                            <constraint firstItem="uFj-pL-jwW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="261" id="Vvz-je-KiV"/>
                             <constraint firstAttribute="bottom" secondItem="Pdl-q7-gtR" secondAttribute="bottom" id="XUB-xn-d31"/>
+                            <constraint firstItem="SLJ-JT-h8L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xl2-bJ-nka"/>
+                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="SLJ-JT-h8L" secondAttribute="bottom" id="XyK-1M-ZJk"/>
+                            <constraint firstItem="E3L-gd-Rls" firstAttribute="leading" secondItem="MVM-5d-MTf" secondAttribute="trailing" constant="60" id="Zgo-cK-pR0"/>
                             <constraint firstItem="8ot-gP-IQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="bgg-bE-hiY"/>
                             <constraint firstItem="Oj3-yS-TyN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="ccD-rq-Ckv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uFj-pL-jwW" secondAttribute="trailing" constant="44" id="hFw-Cp-VYi"/>
+                            <constraint firstItem="SLJ-JT-h8L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="578" id="iLB-8T-joR"/>
                             <constraint firstItem="vEz-OX-Del" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jCt-VP-koP"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kPY-te-1Zm"/>
-                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="McI-cV-QpZ" secondAttribute="bottom" constant="75" id="ryv-Rf-VrH"/>
+                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="McI-cV-QpZ" secondAttribute="bottom" constant="25" id="ryv-Rf-VrH"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="MVM-5d-MTf" secondAttribute="bottom" constant="75" id="v08-JZ-AH0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -136,6 +166,8 @@
                     <connections>
                         <outlet property="authorizeButton" destination="Awz-mL-F5H" id="IIZ-eS-wzN"/>
                         <outlet property="clockSwitch" destination="MVM-5d-MTf" id="cIC-6K-f2V"/>
+                        <outlet property="notificationSwitch" destination="E3L-gd-Rls" id="NaA-iT-804"/>
+                        <outlet property="notificationSwitchLabel" destination="uFj-pL-jwW" id="mh7-fb-B2b"/>
                         <outlet property="passwordText" destination="nQW-Oe-R6V" id="XKd-aE-Ggm"/>
                         <outlet property="powerButton" destination="n7y-EM-bSi" id="Qmp-1a-EZo"/>
                         <outlet property="punchSwitch" destination="McI-cV-QpZ" id="3s8-Ne-6f8"/>
