@@ -33,6 +33,9 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        authorizeButton.layer.cornerRadius = 4
+        resetButton.layer.cornerRadius = 4
+        
         nH = NotificationHandler()
         jS = JavaScriptHandler(viewController: self, notificationHandler: nH!)
         

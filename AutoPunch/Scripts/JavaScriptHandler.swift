@@ -30,8 +30,6 @@ class JavaScriptHandler {
         relayJavaScript(javaScript: "var login=document.getElementById(\"loginField\"); login.value=\"a\(username)\";")
         relayJavaScript(javaScript: "var password=document.getElementById(\"passwordField\"); password.value=\"\(password)\";")
         relayJavaScript(javaScript: "var submit=document.getElementById(\"submitButton\"); submit.click();")
-        
-        print("logging in with \(username) and \(password)")
     }
     
     //handles the punch-in to TLC
