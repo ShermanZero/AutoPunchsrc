@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         super.viewDidLoad()
         
         nH = NotificationHandler()
-        jS = JavaScriptHandler(viewController: self)
+        jS = JavaScriptHandler(viewController: self, notificationHandler: nH!)
         
         passwordText.delegate = self
         webView.navigationDelegate = self

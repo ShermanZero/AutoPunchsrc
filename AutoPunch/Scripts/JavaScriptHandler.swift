@@ -11,12 +11,13 @@ import WebKit
 
 class JavaScriptHandler {
 
-    private var nH:NotificationHandler = NotificationHandler()
+    private var nH:NotificationHandler?
     private var vC:ViewController?
     private var punch:Bool = true
     
-    init(viewController: ViewController) {
+    init(viewController: ViewController, notificationHandler: NotificationHandler) {
         self.vC = viewController
+        self.nH = notificationHandler
     }
     
     //sets whether or not to actually punch-in/out
@@ -42,7 +43,7 @@ class JavaScriptHandler {
         let time = getHourAndMinute()
         let body = "AutoPunch punched-in for you at \(time[0]):\(time[1])!"
         
-        nH.generateNotification(title: "Punch-in successful!", body: body)
+        nH?.generateNotification(title: "Punch-in successful!", body: body)
     }
     
     //handles the punch-out of TLC
@@ -54,7 +55,7 @@ class JavaScriptHandler {
         let time = getHourAndMinute()
         let body = "AutoPunch punched-out for you at \(time[0]):\(time[1])!"
         
-        nH.generateNotification(title: "Punch-out successful!", body: body)
+        nH?.generateNotification(title: "Punch-out successful!", body: body)
     }
     
     //handles the logout of TLC, delaying by one second to show user punch
