@@ -57,9 +57,11 @@ class JavaScriptHandler {
         nH.generateNotification(title: "Punch-out successful!", body: body)
     }
     
-    //handles the logout of TLC
+    //handles the logout of TLC, delaying by one second to show user punch
     public func logout() {
-        relayJavaScript(javaScript: "var logout=document.getElementsByName(\"Logout_Button\");logout[0].click();")
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.relayJavaScript(javaScript: "var logout=document.getElementsByName(\"Logout_Button\");logout[0].click();")
+        })
     }
     
     //returns the current hour and minute in an Integer array

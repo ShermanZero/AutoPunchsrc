@@ -16,13 +16,13 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var authorizeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var clockSwitch: UISwitch!
-    @IBOutlet weak var punchSwitchLabel: UILabel!
-    @IBOutlet weak var punchSwitch: UISwitch!
     @IBOutlet weak var powerButton: UIButton!
+    @IBOutlet weak var clockSwitch: UISwitch!
+    @IBOutlet weak var punchSwitch: UISwitch!
+    @IBOutlet weak var punchSwitchLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     
-    public var loadCount = 0
+    private var loadCount = 0
     private let MAXLOAD = 4
     private var developerMode = 0
     
