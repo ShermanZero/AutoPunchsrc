@@ -14,7 +14,8 @@
 		F3582EFA222F16BC00F292AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3582EF8222F16BC00F292AC /* LaunchScreen.storyboard */; };
 		F3582F05222F16BC00F292AC /* AutoPunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3582F04222F16BC00F292AC /* AutoPunchTests.swift */; };
 		F3582F10222F16BC00F292AC /* AutoPunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */; };
-		F3AE389E222F276D0054F0C6 /* HACKED.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3AE389C222F26980054F0C6 /* HACKED.ttf */; };
+		F3CFFAAB22359B7800EB2097 /* JavaScriptHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */; };
+		F3CFFAAD22359BDF00EB2097 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFAAC22359BDF00EB2097 /* NotificationHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,8 @@
 		F3582F0B222F16BC00F292AC /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchUITests.swift; sourceTree = "<group>"; };
 		F3582F11222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3AE389C222F26980054F0C6 /* HACKED.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HACKED.ttf; sourceTree = "<group>"; };
+		F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
+		F3CFFAAC22359BDF00EB2097 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,11 @@
 			children = (
 				F3582EEF222F16BB00F292AC /* AppDelegate.swift */,
 				F3582EF1222F16BB00F292AC /* ViewController.swift */,
+				F3CFFAAE22359DC300EB2097 /* Scripts */,
+				F3582EF8222F16BC00F292AC /* LaunchScreen.storyboard */,
 				F3582EF3222F16BB00F292AC /* Main.storyboard */,
 				F3582EF6222F16BC00F292AC /* Assets.xcassets */,
-				F3582EF8222F16BC00F292AC /* LaunchScreen.storyboard */,
 				F3582EFB222F16BC00F292AC /* Info.plist */,
-				F3AE389D222F26A20054F0C6 /* fonts */,
 			);
 			path = AutoPunch;
 			sourceTree = "<group>";
@@ -128,12 +130,13 @@
 			path = AutoPunchUITests;
 			sourceTree = "<group>";
 		};
-		F3AE389D222F26A20054F0C6 /* fonts */ = {
+		F3CFFAAE22359DC300EB2097 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				F3AE389C222F26980054F0C6 /* HACKED.ttf */,
+				F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */,
+				F3CFFAAC22359BDF00EB2097 /* NotificationHandler.swift */,
 			);
-			path = fonts;
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +245,6 @@
 			files = (
 				F3582EFA222F16BC00F292AC /* LaunchScreen.storyboard in Resources */,
 				F3582EF7222F16BC00F292AC /* Assets.xcassets in Resources */,
-				F3AE389E222F276D0054F0C6 /* HACKED.ttf in Resources */,
 				F3582EF5222F16BB00F292AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3582EF2222F16BB00F292AC /* ViewController.swift in Sources */,
+				F3CFFAAD22359BDF00EB2097 /* NotificationHandler.swift in Sources */,
+				F3CFFAAB22359B7800EB2097 /* JavaScriptHandler.swift in Sources */,
 				F3582EF0222F16BB00F292AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

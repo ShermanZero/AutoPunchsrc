@@ -25,7 +25,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="titlePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXw-FR-NzW"/>
+                                    <action selector="titlePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RvV-Fx-4eU"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-gP-IQe">
@@ -53,7 +53,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJE-ze-SLA"/>
+                                            <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z55-23-fYx"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2H-mJ-fkz" userLabel="resetButton">
@@ -64,8 +64,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="authorizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aus-WK-0Hx"/>
-                                            <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EqE-nF-tBT"/>
+                                            <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xn3-fY-avY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -74,7 +73,7 @@
                                 <rect key="frame" x="139.66666666666666" y="358" width="96" height="96"/>
                                 <state key="normal" image="powerButton"/>
                                 <connections>
-                                    <action selector="powerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fyo-S8-kjI"/>
+                                    <action selector="powerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ckR-Bc-Ras"/>
                                 </connections>
                             </button>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVM-5d-MTf" userLabel="clockSwitch">
@@ -82,24 +81,20 @@
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="clockToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="AhB-wP-IDi"/>
-                                </connections>
                             </switch>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setPunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-yS-TyN">
-                                <rect key="frame" x="53" y="509.66666666666669" width="53" height="14.333333333333314"/>
+                                <rect key="frame" x="53" y="454.66666666666669" width="53" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McI-cV-QpZ" userLabel="punchSwitch">
-                                <rect key="frame" x="54" y="529" width="51" height="31"/>
+                                <rect key="frame" x="54" y="474" width="51" height="31"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="clockToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="N3U-vw-xGq"/>
-                                    <action selector="punchSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="4UU-Np-zwp"/>
+                                    <action selector="punchSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="tr4-0Y-weD"/>
                                 </connections>
                             </switch>
                             <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdl-q7-gtR">
@@ -130,21 +125,21 @@
                             <constraint firstItem="Oj3-yS-TyN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="ccD-rq-Ckv"/>
                             <constraint firstItem="vEz-OX-Del" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jCt-VP-koP"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kPY-te-1Zm"/>
-                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="McI-cV-QpZ" secondAttribute="bottom" constant="20" id="ryv-Rf-VrH"/>
+                            <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="McI-cV-QpZ" secondAttribute="bottom" constant="75" id="ryv-Rf-VrH"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="MVM-5d-MTf" secondAttribute="bottom" constant="75" id="v08-JZ-AH0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="authorizeButton" destination="Awz-mL-F5H" id="rVg-XW-mSP"/>
-                        <outlet property="clockSwitch" destination="MVM-5d-MTf" id="yO2-UL-cBR"/>
-                        <outlet property="passwordText" destination="nQW-Oe-R6V" id="ewp-eL-WCH"/>
-                        <outlet property="powerButton" destination="n7y-EM-bSi" id="yMj-7B-KHB"/>
-                        <outlet property="punchSwitch" destination="McI-cV-QpZ" id="DDR-D6-VHk"/>
-                        <outlet property="punchSwitchLabel" destination="Oj3-yS-TyN" id="8Qn-ej-Ca2"/>
-                        <outlet property="resetButton" destination="S2H-mJ-fkz" id="KwG-RO-ica"/>
-                        <outlet property="usernameText" destination="4yo-WU-SMO" id="C97-c1-e7e"/>
-                        <outlet property="webView" destination="Pdl-q7-gtR" id="fD8-5N-OpR"/>
+                        <outlet property="authorizeButton" destination="Awz-mL-F5H" id="IIZ-eS-wzN"/>
+                        <outlet property="clockSwitch" destination="MVM-5d-MTf" id="cIC-6K-f2V"/>
+                        <outlet property="passwordText" destination="nQW-Oe-R6V" id="XKd-aE-Ggm"/>
+                        <outlet property="powerButton" destination="n7y-EM-bSi" id="Qmp-1a-EZo"/>
+                        <outlet property="punchSwitch" destination="McI-cV-QpZ" id="3s8-Ne-6f8"/>
+                        <outlet property="punchSwitchLabel" destination="Oj3-yS-TyN" id="kKY-Ln-CRq"/>
+                        <outlet property="resetButton" destination="S2H-mJ-fkz" id="4LP-ar-nb6"/>
+                        <outlet property="usernameText" destination="4yo-WU-SMO" id="JFP-2X-YcY"/>
+                        <outlet property="webView" destination="Pdl-q7-gtR" id="aya-Sn-lfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

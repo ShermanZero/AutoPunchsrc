@@ -11,77 +11,85 @@ import WebKit
 import UserNotifications
 
 class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
-
+    
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
-    
-    @IBOutlet weak var powerButton: UIButton!
-    @IBOutlet weak var clockSwitch: UISwitch!
-    @IBOutlet weak var punchSwitch: UISwitch!
     @IBOutlet weak var authorizeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-    
+    @IBOutlet weak var clockSwitch: UISwitch!
     @IBOutlet weak var punchSwitchLabel: UILabel!
-    
+    @IBOutlet weak var punchSwitch: UISwitch!
+    @IBOutlet weak var powerButton: UIButton!
     @IBOutlet weak var webView: WKWebView!
     
-    var loadCount = 0
-    let MAXLOAD = 4
-    var punch = true
+    public var loadCount = 0
+    private let MAXLOAD = 4
+    private var developerMode = 0
     
-    var developerMode = 0
+    private var nH:NotificationHandler?
+    private var jS:JavaScriptHandler?
     
+    //does on load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nH = NotificationHandler()
+        jS = JavaScriptHandler(viewController: self)
         
         passwordText.delegate = self
         webView.navigationDelegate = self
         
-        let username = UserDefaults.standard.object(forKey: "username")
-        let password = UserDefaults.standard.object(forKey: "password")
-        let clock : Bool = UserDefaults.standard.bool(forKey: "clock")
-        clockSwitch.isOn = clock
+        let username = UserDefaults.standard.string(forKey: "username")
+        let password = UserDefaults.standard.string(forKey: "password")
+        clockSwitch.isOn = UserDefaults.standard.bool(forKey: "clock")
         
-        if ((username as? String) != nil) && ((password as? String) != nil)
+        if (username != nil && password != nil)
         {
-            usernameText.text = username as? String
-            passwordText.text = password as? String
+            usernameText.text = username
+            passwordText.text = password
             
-            show()
+            showTools()
         }
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        if(UserDefaults.standard.bool(forKey: "developer")) {
+            showDevTools()
+        }
+        
+        //request access to notifications
+        nH?.requestNotificationAccess()
     }
     
+    //when the user presses the title (enabling dev mode)
     @IBAction func titlePressed(_ sender: Any) {
         developerMode += 1
         
         if(developerMode >= 3) {
             showDevTools()
+            UserDefaults.standard.set(true, forKey: "developer")
         }
     }
     
+    //when the user toggles the punch switch (developer)
     @IBAction func punchSwitchToggled(_ sender: Any) {
-        punch = punchSwitch.isOn
+        setUserDefaults()
     }
     
+    //when the user presses the authorize button
     @IBAction func authorizePressed(_ sender: Any) {
         setUserDefaults()
         hideKeyboard()
-        show()
+        showTools()
     }
     
+    //when the user presses the reset button
     @IBAction func resetPressed(_ sender: Any) {
-        clearSaved()
+        clearUserDefaults()
         
         usernameText.text = ""
         passwordText.text = ""
     }
     
-    @IBAction func clockToggled(_ sender: Any) {
-        setUserDefaults()
-    }
-    
+    //when the user presses the power button
     @IBAction func powerButtonPressed(_ sender: Any) {
         webView.isHidden = false
         
@@ -89,49 +97,27 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         webView.load(URLRequest(url: url!))
     }
     
-    func showDevTools() {
-        punchSwitch.isHidden = false
-        punchSwitchLabel.isHidden = false
-    }
-    
-    func setUserDefaults() {
-        UserDefaults.standard.set(usernameText.text, forKey: "username")
-        UserDefaults.standard.set(passwordText.text, forKey: "password")
-        UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        hideKeyboard()
-        return true
-    }
-    
-    func hideKeyboard() {
-        self.view.endEditing(true)
-    }
-    
+    //handles when a webpage loads
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadCount += 1
-       
-        webView.evaluateJavaScript("document.body.innerHTML") { (string, error) in print(string!) }
         
         if (loadCount == 1) {
-            if (!login()) {
-                loadCount = MAXLOAD
-            }
+            jS?.login(usernameText.text!, passwordText.text!)
         } else if (loadCount == 2) {
+            jS?.setPunch(punch: punchSwitch.isOn)
+            
             if(clockSwitch.isOn) {
-                punchIn()
-            }
-            else {
-                punchOut()
+                jS?.punchIn()
+            } else {
+                jS?.punchOut()
             }
             
-            if(!punch) {
+            if(!punchSwitch.isOn) {
                 loadCount += 1
-                logout()
+                jS?.logout()
             }
         } else if (loadCount == 3) {
-            logout()
+            jS?.logout()
         } else if (loadCount >= MAXLOAD) {
             webView.isHidden = true
             
@@ -139,88 +125,73 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
             webView.load(URLRequest(url: url!))
             
             clockSwitch.isOn = !clockSwitch.isOn
-            setUserDefaults()
             loadCount = -1
+            
+            setUserDefaults()
         }
     }
     
-    func show() {
+    //handles when a textField is done editing
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboard()
+        return true
+    }
+    
+    //sets user defaults
+    func setUserDefaults() {
+        UserDefaults.standard.set(usernameText.text, forKey: "username")
+        UserDefaults.standard.set(passwordText.text, forKey: "password")
+        UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
+        UserDefaults.standard.set(punchSwitch.isOn, forKey: "punch")
+    }
+    
+    //hides the on-screen keyboard
+    func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    //executes javascript within the webView
+    public func executeJavaScript(script: String) {
+        webView.evaluateJavaScript(script, completionHandler: nil)
+    }
+    
+    //shows the standard tools
+    func showTools() {
         authorizeButton.isHidden = true
         resetButton.isHidden = false
         powerButton.isHidden = false
         clockSwitch.isHidden = false
     }
     
-    func hide() {
+    //shows the dev tools
+    func showDevTools() {
+        punchSwitch.isHidden = false
+        punchSwitchLabel.isHidden = false
+    }
+    
+    //hides the standard tools
+    func hideTools() {
         authorizeButton.isHidden = false
         resetButton.isHidden = true
         powerButton.isHidden = true
         clockSwitch.isHidden = true
     }
     
-    func clearSaved() {
+    //hides the dev tools
+    func hideDevTools() {
+        punchSwitch.isHidden = true
+        punchSwitchLabel.isHidden = true
+    }
+    
+    //clears the saved user defaults
+    func clearUserDefaults() {
         UserDefaults.standard.set(nil, forKey: "username")
         UserDefaults.standard.set(nil, forKey: "password")
+        UserDefaults.standard.set(true, forKey: "clock")
+        UserDefaults.standard.set(true, forKey: "punch")
+        UserDefaults.standard.set(false, forKey: "developer")
         
-        hide()
-    }
-    
-    func login() -> Bool {
-        doJavaScript(script: "var login=document.getElementById(\"loginField\"); login.value=\"a" + usernameText.text! + "\";")
-        doJavaScript(script: "var password=document.getElementById(\"passwordField\"); password.value=\"" + passwordText.text! + "\";")
-        doJavaScript(script: "var submit=document.getElementById(\"submitButton\"); submit.click();")
-    
-        return true
-    }
-    
-    func punchIn() {
-        if(punch) {
-            doJavaScript(script: "var punchIn=document.getElementsByName(\"Clock_On_Button\");punchIn[0].click();")
-        }
-        
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        
-        let body = "AutoPunch punched-in for you at \(hour):\(minutes)!"
-        
-        generateNotification(title: "Punch-in successful!", body: body)
-    }
-    
-    func punchOut() {
-        if(punch) {
-            doJavaScript(script: "var punchOut=document.getElementsByName(\"Clock_Off_Button\");punchOut[0].click();")
-        }
-
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        
-        let body = "AutoPunch punched-out for you at \(hour):\(minutes)!"
-        
-        generateNotification(title: "Punch-out successful!", body: body)
-    }
-    
-    func logout() {
-        doJavaScript(script: "var logout=document.getElementsByName(\"Logout_Button\");logout[0].click();")
-    }
-    
-    func doJavaScript(script: String) {
-        webView.evaluateJavaScript(script, completionHandler: nil)
-    }
-    
-    func generateNotification(title: String, body: String) {
-        let content = UNMutableNotificationContent()
-        
-        content.title = title
-        content.body = body
-        content.badge = 1
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        hideTools()
+        hideDevTools()
     }
 }
