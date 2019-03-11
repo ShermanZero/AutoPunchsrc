@@ -74,6 +74,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         setUserDefaults()
     }
     
+    //when the user toggles the clock switch
+    @IBAction func clockSwitchToggled(_ sender: Any) {
+        setUserDefaults()
+    }
+    
     //when the user presses the authorize button
     @IBAction func authorizePressed(_ sender: Any) {
         setUserDefaults()
