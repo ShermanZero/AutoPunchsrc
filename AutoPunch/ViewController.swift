@@ -143,6 +143,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     //when the user presses the power button
     @IBAction func powerButtonPressed(_ sender: Any) {
         webView.isHidden = false
+        updateLabel.text = "loading TLC..."
         
         let url = URL(string: "https://tlcmobile.bestbuy.com/mobileClock/")
         webView.load(URLRequest(url: url!))
