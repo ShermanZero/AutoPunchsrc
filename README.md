@@ -9,4 +9,4 @@ Welcome to **AutoPunch**, the tool designed for Best Buy employees tired of goin
 
 ## Changelog
 
-- **v2.0** Adds notifications configured to every Tuesday, Wednesday, Thursday, and Saturday that allow you to punch-in/out directly from the notification
+- **v2.0** -- Adds notifications configured to every Tuesday, Wednesday, Thursday, and Saturday that allow you to punch-in/out directly from the notification
