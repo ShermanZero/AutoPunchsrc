@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     @IBOutlet weak var clockSwitch: UISwitch!
     @IBOutlet weak var punchSwitch: UISwitch!
     @IBOutlet weak var notificationSwitch: UISwitch!
+    @IBOutlet weak var updateLabel: UILabel!
     @IBOutlet weak var punchSwitchLabel: UILabel!
     @IBOutlet weak var notificationSwitchLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
@@ -152,13 +153,19 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         loadCount += 1
         
         if (loadCount == 1) {
+            updateLabel.text = "logging in to TLC..."
+            
             jS?.login(usernameText.text!, passwordText.text!)
         } else if (loadCount == 2) {
             jS?.setPunch(punch: punchSwitch.isOn)
             
             if(clockSwitch.isOn) {
+                updateLabel.text = "punching in to TLC..."
+                
                 jS?.punchIn()
             } else {
+                updateLabel.text = "punching out of TLC..."
+                
                 jS?.punchOut()
             }
             
@@ -167,8 +174,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
                 jS?.logout()
             }
         } else if (loadCount == 3) {
+            updateLabel.text = "logging out of TLC..."
+            
             jS?.logout()
         } else if (loadCount >= MAXLOAD) {
+            updateLabel.text = ""
             webView.isHidden = true
             
             let url = URL(string: "https://tlcmobile.bestbuy.com/mobileClock/")
