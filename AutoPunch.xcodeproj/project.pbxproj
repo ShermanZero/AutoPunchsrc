@@ -66,19 +66,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F303440A2238311B00F375FB /* AutoPunchWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AutoPunchWatchOS.app; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS.app"; sourceTree = "<absolute>"; };
-		F30344162238311C00F375FB /* AutoPunchWatchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "AutoPunchWatchOS Extension.appex"; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS Extension.appex"; sourceTree = "<absolute>"; };
 		F32904932239B6EA001F2D58 /* AutoPunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34141552239B9E30064FB3E /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34141572239B9E30064FB3E /* AutoPunchWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AutoPunchWatchOS.app; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS.app"; sourceTree = "<absolute>"; };
+		F34141582239B9E30064FB3E /* AutoPunchWatchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "AutoPunchWatchOS Extension.appex"; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS Extension.appex"; sourceTree = "<absolute>"; };
+		F34141592239BA490064FB3E /* AutoPunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoPunch.entitlements; sourceTree = "<group>"; };
 		F3582EEF222F16BB00F292AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3582EF1222F16BB00F292AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3582EF4222F16BB00F292AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3582EF6222F16BC00F292AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3582EF9222F16BC00F292AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3582EFB222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3582F00222F16BC00F292AC /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchTests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchTests.xctest"; sourceTree = "<absolute>"; };
 		F3582F04222F16BC00F292AC /* AutoPunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchTests.swift; sourceTree = "<group>"; };
 		F3582F06222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3582F0B222F16BC00F292AC /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchUITests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchUITests.xctest"; sourceTree = "<absolute>"; };
 		F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchUITests.swift; sourceTree = "<group>"; };
 		F3582F11222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
@@ -124,12 +125,15 @@
 				F3582F03222F16BC00F292AC /* AutoPunchTests */,
 				F3582F0E222F16BC00F292AC /* AutoPunchUITests */,
 				F32904932239B6EA001F2D58 /* AutoPunch.app */,
+				F34141552239B9E30064FB3E /* AutoPunchTests.xctest */,
+				F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 		F3582EEE222F16BB00F292AC /* AutoPunch */ = {
 			isa = PBXGroup;
 			children = (
+				F34141592239BA490064FB3E /* AutoPunch.entitlements */,
 				F3582EEF222F16BB00F292AC /* AppDelegate.swift */,
 				F3582EF1222F16BB00F292AC /* ViewController.swift */,
 				F3CFFAAE22359DC300EB2097 /* Scripts */,
@@ -185,7 +189,7 @@
 			);
 			name = AutoPunchWatchOS;
 			productName = AutoPunchWatchOS;
-			productReference = F303440A2238311B00F375FB /* AutoPunchWatchOS.app */;
+			productReference = F34141572239B9E30064FB3E /* AutoPunchWatchOS.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		F30344152238311C00F375FB /* AutoPunchWatchOS Extension */ = {
@@ -202,7 +206,7 @@
 			);
 			name = "AutoPunchWatchOS Extension";
 			productName = "AutoPunchWatchOS Extension";
-			productReference = F30344162238311C00F375FB /* AutoPunchWatchOS Extension.appex */;
+			productReference = F34141582239B9E30064FB3E /* AutoPunchWatchOS Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		F3582EEB222F16BB00F292AC /* AutoPunch */ = {
@@ -238,7 +242,7 @@
 			);
 			name = AutoPunchTests;
 			productName = AutoPunchTests;
-			productReference = F3582F00222F16BC00F292AC /* AutoPunchTests.xctest */;
+			productReference = F34141552239B9E30064FB3E /* AutoPunchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F3582F0A222F16BC00F292AC /* AutoPunchUITests */ = {
@@ -256,7 +260,7 @@
 			);
 			name = AutoPunchUITests;
 			productName = AutoPunchUITests;
-			productReference = F3582F0B222F16BC00F292AC /* AutoPunchUITests.xctest */;
+			productReference = F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -277,6 +281,14 @@
 					};
 					F3582EEB222F16BB00F292AC = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					F3582EFF222F16BC00F292AC = {
 						CreatedOnToolsVersion = 10.1;
