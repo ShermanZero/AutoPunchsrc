@@ -1,5 +1,8 @@
 # AutoPunchsrc v2.0
+
 Welcome to **AutoPunch**, the tool designed for Best Buy employees tired of going through the long and boring punch-in/punch-out process of TLC.  With **AutoPunch**, you press one button and the rest is done for you.
+
+![AutoPunch](https://github.com/ShermanZero/AutoPunchsrc/blob/master/Screen%20Shot%202019-03-13%20at%206.33.35%20PM.png)
 
 ## iOS Installation
 
