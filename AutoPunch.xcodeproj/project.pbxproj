@@ -19,13 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F30344182238311C00F375FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F3582EE4222F16BB00F292AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F30344152238311C00F375FB;
-			remoteInfo = "AutoPunchWatchOS Extension";
-		};
 		F3582F01222F16BC00F292AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F3582EE4222F16BB00F292AC /* Project object */;
@@ -43,16 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F303442D2238311D00F375FB /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F303442F2238311D00F375FB /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,8 +52,6 @@
 		F32904932239B6EA001F2D58 /* AutoPunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34141552239B9E30064FB3E /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F34141572239B9E30064FB3E /* AutoPunchWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AutoPunchWatchOS.app; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS.app"; sourceTree = "<absolute>"; };
-		F34141582239B9E30064FB3E /* AutoPunchWatchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "AutoPunchWatchOS Extension.appex"; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS Extension.appex"; sourceTree = "<absolute>"; };
 		F34141592239BA490064FB3E /* AutoPunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoPunch.entitlements; sourceTree = "<group>"; };
 		F3582EEF222F16BB00F292AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3582EF1222F16BB00F292AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,13 +68,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F30344132238311C00F375FB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F3582EE9222F16BB00F292AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,40 +149,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F30344092238311B00F375FB /* AutoPunchWatchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F303442E2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS" */;
-			buildPhases = (
-				F30344082238311B00F375FB /* Resources */,
-				F303442D2238311D00F375FB /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F30344192238311C00F375FB /* PBXTargetDependency */,
-			);
-			name = AutoPunchWatchOS;
-			productName = AutoPunchWatchOS;
-			productReference = F34141572239B9E30064FB3E /* AutoPunchWatchOS.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		F30344152238311C00F375FB /* AutoPunchWatchOS Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F303442C2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS Extension" */;
-			buildPhases = (
-				F30344122238311C00F375FB /* Sources */,
-				F30344132238311C00F375FB /* Frameworks */,
-				F30344142238311C00F375FB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "AutoPunchWatchOS Extension";
-			productName = "AutoPunchWatchOS Extension";
-			productReference = F34141582239B9E30064FB3E /* AutoPunchWatchOS Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		F3582EEB222F16BB00F292AC /* AutoPunch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3582F14222F16BC00F292AC /* Build configuration list for PBXNativeTarget "AutoPunch" */;
@@ -273,12 +213,6 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Kieran Sherman";
 				TargetAttributes = {
-					F30344092238311B00F375FB = {
-						CreatedOnToolsVersion = 10.1;
-					};
-					F30344152238311C00F375FB = {
-						CreatedOnToolsVersion = 10.1;
-					};
 					F3582EEB222F16BB00F292AC = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -316,27 +250,11 @@
 				F3582EEB222F16BB00F292AC /* AutoPunch */,
 				F3582EFF222F16BC00F292AC /* AutoPunchTests */,
 				F3582F0A222F16BC00F292AC /* AutoPunchUITests */,
-				F30344092238311B00F375FB /* AutoPunchWatchOS */,
-				F30344152238311C00F375FB /* AutoPunchWatchOS Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F30344082238311B00F375FB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F30344142238311C00F375FB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F3582EEA222F16BB00F292AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,13 +282,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F30344122238311C00F375FB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F3582EE8222F16BB00F292AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,11 +312,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F30344192238311C00F375FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F30344152238311C00F375FB /* AutoPunchWatchOS Extension */;
-			targetProxy = F30344182238311C00F375FB /* PBXContainerItemProxy */;
-		};
 		F3582F02222F16BC00F292AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F3582EEB222F16BB00F292AC /* AutoPunch */;
@@ -438,86 +344,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F30344282238311D00F375FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				IBSC_MODULE = AutoPunchWatchOS_Extension;
-				INFOPLIST_FILE = AutoPunchWatchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Debug;
-		};
-		F30344292238311D00F375FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				IBSC_MODULE = AutoPunchWatchOS_Extension;
-				INFOPLIST_FILE = AutoPunchWatchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Release;
-		};
-		F303442A2238311D00F375FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				INFOPLIST_FILE = "AutoPunchWatchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Debug;
-		};
-		F303442B2238311D00F375FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				INFOPLIST_FILE = "AutoPunchWatchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Release;
-		};
 		F3582F12222F16BC00F292AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -759,24 +585,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F303442C2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F303442A2238311D00F375FB /* Debug */,
-				F303442B2238311D00F375FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F303442E2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F30344282238311D00F375FB /* Debug */,
-				F30344292238311D00F375FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F3582EE7222F16BB00F292AC /* Build configuration list for PBXProject "AutoPunch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
