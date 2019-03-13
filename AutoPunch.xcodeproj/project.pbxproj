@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F30344182238311C00F375FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3582EE4222F16BB00F292AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F30344152238311C00F375FB;
+			remoteInfo = "AutoPunchWatchOS Extension";
+		};
 		F3582F01222F16BC00F292AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F3582EE4222F16BB00F292AC /* Project object */;
@@ -35,18 +42,43 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F303442D2238311D00F375FB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F303442F2238311D00F375FB /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		F3582EEC222F16BB00F292AC /* AutoPunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F303440A2238311B00F375FB /* AutoPunchWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AutoPunchWatchOS.app; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS.app"; sourceTree = "<absolute>"; };
+		F30344162238311C00F375FB /* AutoPunchWatchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "AutoPunchWatchOS Extension.appex"; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-watchos/AutoPunchWatchOS Extension.appex"; sourceTree = "<absolute>"; };
+		F32904932239B6EA001F2D58 /* AutoPunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3582EEF222F16BB00F292AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3582EF1222F16BB00F292AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3582EF4222F16BB00F292AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3582EF6222F16BC00F292AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3582EF9222F16BC00F292AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3582EFB222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3582F00222F16BC00F292AC /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3582F00222F16BC00F292AC /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchTests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchTests.xctest"; sourceTree = "<absolute>"; };
 		F3582F04222F16BC00F292AC /* AutoPunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchTests.swift; sourceTree = "<group>"; };
 		F3582F06222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3582F0B222F16BC00F292AC /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3582F0B222F16BC00F292AC /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchUITests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchUITests.xctest"; sourceTree = "<absolute>"; };
 		F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchUITests.swift; sourceTree = "<group>"; };
 		F3582F11222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
@@ -54,6 +86,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F30344132238311C00F375FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3582EE9222F16BB00F292AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,18 +123,8 @@
 				F3582EEE222F16BB00F292AC /* AutoPunch */,
 				F3582F03222F16BC00F292AC /* AutoPunchTests */,
 				F3582F0E222F16BC00F292AC /* AutoPunchUITests */,
-				F3582EED222F16BB00F292AC /* Products */,
+				F32904932239B6EA001F2D58 /* AutoPunch.app */,
 			);
-			sourceTree = "<group>";
-		};
-		F3582EED222F16BB00F292AC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F3582EEC222F16BB00F292AC /* AutoPunch.app */,
-				F3582F00222F16BC00F292AC /* AutoPunchTests.xctest */,
-				F3582F0B222F16BC00F292AC /* AutoPunchUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F3582EEE222F16BB00F292AC /* AutoPunch */ = {
@@ -142,6 +171,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F30344092238311B00F375FB /* AutoPunchWatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F303442E2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS" */;
+			buildPhases = (
+				F30344082238311B00F375FB /* Resources */,
+				F303442D2238311D00F375FB /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F30344192238311C00F375FB /* PBXTargetDependency */,
+			);
+			name = AutoPunchWatchOS;
+			productName = AutoPunchWatchOS;
+			productReference = F303440A2238311B00F375FB /* AutoPunchWatchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F30344152238311C00F375FB /* AutoPunchWatchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F303442C2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS Extension" */;
+			buildPhases = (
+				F30344122238311C00F375FB /* Sources */,
+				F30344132238311C00F375FB /* Frameworks */,
+				F30344142238311C00F375FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AutoPunchWatchOS Extension";
+			productName = "AutoPunchWatchOS Extension";
+			productReference = F30344162238311C00F375FB /* AutoPunchWatchOS Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		F3582EEB222F16BB00F292AC /* AutoPunch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3582F14222F16BC00F292AC /* Build configuration list for PBXNativeTarget "AutoPunch" */;
@@ -149,6 +212,7 @@
 				F3582EE8222F16BB00F292AC /* Sources */,
 				F3582EE9222F16BB00F292AC /* Frameworks */,
 				F3582EEA222F16BB00F292AC /* Resources */,
+				F303442F2238311D00F375FB /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -156,7 +220,7 @@
 			);
 			name = AutoPunch;
 			productName = AutoPunch;
-			productReference = F3582EEC222F16BB00F292AC /* AutoPunch.app */;
+			productReference = F32904932239B6EA001F2D58 /* AutoPunch.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F3582EFF222F16BC00F292AC /* AutoPunchTests */ = {
@@ -205,6 +269,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Kieran Sherman";
 				TargetAttributes = {
+					F30344092238311B00F375FB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F30344152238311C00F375FB = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					F3582EEB222F16BB00F292AC = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -219,7 +289,7 @@
 				};
 			};
 			buildConfigurationList = F3582EE7222F16BB00F292AC /* Build configuration list for PBXProject "AutoPunch" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -227,18 +297,34 @@
 				Base,
 			);
 			mainGroup = F3582EE3222F16BB00F292AC;
-			productRefGroup = F3582EED222F16BB00F292AC /* Products */;
+			productRefGroup = F3582EE3222F16BB00F292AC;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F3582EEB222F16BB00F292AC /* AutoPunch */,
 				F3582EFF222F16BC00F292AC /* AutoPunchTests */,
 				F3582F0A222F16BC00F292AC /* AutoPunchUITests */,
+				F30344092238311B00F375FB /* AutoPunchWatchOS */,
+				F30344152238311C00F375FB /* AutoPunchWatchOS Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F30344082238311B00F375FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F30344142238311C00F375FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3582EEA222F16BB00F292AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +352,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F30344122238311C00F375FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3582EE8222F16BB00F292AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +389,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F30344192238311C00F375FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F30344152238311C00F375FB /* AutoPunchWatchOS Extension */;
+			targetProxy = F30344182238311C00F375FB /* PBXContainerItemProxy */;
+		};
 		F3582F02222F16BC00F292AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F3582EEB222F16BB00F292AC /* AutoPunch */;
@@ -328,6 +426,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F30344282238311D00F375FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HXQM93RCR;
+				IBSC_MODULE = AutoPunchWatchOS_Extension;
+				INFOPLIST_FILE = AutoPunchWatchOS/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		F30344292238311D00F375FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HXQM93RCR;
+				IBSC_MODULE = AutoPunchWatchOS_Extension;
+				INFOPLIST_FILE = AutoPunchWatchOS/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		F303442A2238311D00F375FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HXQM93RCR;
+				INFOPLIST_FILE = "AutoPunchWatchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		F303442B2238311D00F375FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HXQM93RCR;
+				INFOPLIST_FILE = "AutoPunchWatchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 		F3582F12222F16BC00F292AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -448,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HXQM93RCR;
 				INFOPLIST_FILE = AutoPunch/Info.plist;
@@ -457,6 +636,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -466,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HXQM93RCR;
 				INFOPLIST_FILE = AutoPunch/Info.plist;
@@ -475,6 +656,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,6 +747,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F303442C2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F303442A2238311D00F375FB /* Debug */,
+				F303442B2238311D00F375FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F303442E2238311D00F375FB /* Build configuration list for PBXNativeTarget "AutoPunchWatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F30344282238311D00F375FB /* Debug */,
+				F30344292238311D00F375FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3582EE7222F16BB00F292AC /* Build configuration list for PBXProject "AutoPunch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

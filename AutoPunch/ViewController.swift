@@ -6,8 +6,8 @@
 //  Copyright © 2019 Kieran Sherman. All rights reserved.
 //
 
-import UIKit
 import WebKit
+import UIKit
 import UserNotifications
 
 class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate, UNUserNotificationCenterDelegate {
@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     @IBOutlet weak var notificationSwitchLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     
+    private var lastMessage: CFAbsoluteTime = 0
     private var loadCount = 0
     private let MAXLOAD = 4
     private var developerModeCount = 0
@@ -36,7 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     //does on load
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateUI()
         
         UserDefaults.standard.register(defaults: ["punch" : true])
