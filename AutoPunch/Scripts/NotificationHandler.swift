@@ -56,12 +56,12 @@ class NotificationHandler {
     //clears timed notifications
     public func clearTimedNotifications() {
         let center = UNUserNotificationCenter.current()
-        center.removePendingNotificationRequests(withIdentifiers: ["PUNCH_IN", "PUNCH_OUT"])
+        center.removeAllPendingNotificationRequests()
     }
     
     //generates a notification
     public func generateNotification(title: String, body: String, category: String? = nil, timed: Bool? = false) -> UNMutableNotificationContent? {
-        if(!notificationsAllowed) {
+        if (!notificationsAllowed) {
             return nil
         }
         
@@ -69,10 +69,14 @@ class NotificationHandler {
         
         content.title = title
         content.body = body
-        content.categoryIdentifier = category!
+        
+        if (category != nil) {
+            content.categoryIdentifier = category!
+        }
+        
         content.badge = 1
 
-        if(timed == false) {
+        if (timed == false) {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
             let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
             

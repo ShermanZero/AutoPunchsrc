@@ -41,7 +41,7 @@ class JavaScriptHandler {
         let time = getHourAndMinute()
         let body = "AutoPunch punched-in for you at \(time[0]):\(time[1])!"
         
-        nH?.generateNotification(title: "Punch-in successful!", body: body, category: "PUNCH_REQUEST")
+        _ = nH?.generateNotification(title: "Punch-in successful!", body: body)
     }
     
     //handles the punch-out of TLC
@@ -53,7 +53,7 @@ class JavaScriptHandler {
         let time = getHourAndMinute()
         let body = "AutoPunch punched-out for you at \(time[0]):\(time[1])!"
         
-        nH?.generateNotification(title: "Punch-out successful!", body: body, category: "PUNCH_REQUEST")
+        _ = nH?.generateNotification(title: "Punch-out successful!", body: body)
     }
     
     //handles the logout of TLC, delaying by one second to show user punch
