@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     private var lastMessage: CFAbsoluteTime = 0
     private var loadCount = 0
     private let MAXLOAD = 4
+    private var needsAuthorization: Bool?
     private var developerModeCount = 0
     private var isDeveloperMode = UserDefaults.standard.bool(forKey: "developer")
     
@@ -41,6 +42,9 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         updateUI()
         
         UserDefaults.standard.register(defaults: ["punch" : true])
+        UserDefaults.standard.register(defaults: ["auth": true])
+        
+        needsAuthorization = UserDefaults.standard.bool(forKey: "auth")
         
         nH = NotificationHandler(viewController: self)
         jS = JavaScriptHandler(viewController: self, notificationHandler: nH!)
@@ -128,9 +132,10 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     
     //when the user presses the authorize button
     @IBAction func authorizePressed(_ sender: Any) {
+        loadTLC()
+        
         setUserDefaults()
         hideKeyboard()
-        showTools()
     }
     
     //when the user presses the reset button
@@ -146,8 +151,15 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         webView.isHidden = false
         updateLabel.text = "loading TLC..."
         
+        loadTLC()
+    }
+    
+    //loads TLC
+    private func loadTLC() {
         let url = URL(string: "https://tlcmobile.bestbuy.com/mobileClock/")
         webView.load(URLRequest(url: url!))
+        
+        loadCount = 0
     }
     
     //handles when a webpage loads
@@ -159,6 +171,22 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
             
             jS?.login(usernameText.text!, passwordText.text!)
         } else if (loadCount == 2) {
+            if(needsAuthorization!) {
+                htmlHasClass(str: "errorText") { (result) -> () in
+                    if(!result) {
+                        self.showTools()
+                        self.needsAuthorization = false
+                        self.updateLabel.text = "authorization successful"
+                        self.setUserDefaults()
+                        return
+                    } else {
+                        self.updateLabel.text = "wrong credentials"
+                    }
+                }
+                
+                loadCount = -10
+            }
+            
             jS?.setPunch(punch: punchSwitch.isOn)
             
             if(clockSwitch.isOn) {
@@ -209,8 +237,16 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
+    //returns if the html contains a class
+    private func htmlHasClass(str: String, callback: ((_ result: Bool) -> ())?) {
+        webView.evaluateJavaScript("document.getElementsByClassName(\"\(str)\")[0].className", completionHandler: { (html: Any?, error: Error?) in
+            let contains = (html as? String ?? "" == str)
+            callback?(contains)
+        })
+    }
+    
     //shows the standard tools
-    func showTools() {
+    private func showTools() {
         authorizeButton.isHidden = true
         resetButton.isHidden = false
         powerButton.isHidden = false
@@ -220,7 +256,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     //shows the dev tools
-    func showDevTools() {
+    private func showDevTools() {
         punchSwitch.isHidden = false
         punchSwitchLabel.isHidden = false
         notificationSwitch.isHidden = false
@@ -231,7 +267,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     //hides the standard tools
-    func hideTools() {
+    private func hideTools() {
         authorizeButton.isHidden = false
         resetButton.isHidden = true
         powerButton.isHidden = true
@@ -239,7 +275,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     //hides the dev tools
-    func hideDevTools() {
+    private func hideDevTools() {
         punchSwitch.isHidden = true
         punchSwitchLabel.isHidden = true
         notificationSwitch.isHidden = true
@@ -247,22 +283,26 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
     }
     
     //sets user defaults
-    func setUserDefaults() {
+    private func setUserDefaults() {
         UserDefaults.standard.set(usernameText.text, forKey: "username")
         UserDefaults.standard.set(passwordText.text, forKey: "password")
         UserDefaults.standard.set(clockSwitch.isOn, forKey: "clock")
         UserDefaults.standard.set(punchSwitch.isOn, forKey: "punch")
         UserDefaults.standard.set(notificationSwitch.isOn, forKey: "notifications")
+        UserDefaults.standard.set(needsAuthorization, forKey: "auth")
     }
     
     //clears the saved user defaults
-    func clearUserDefaults() {
+    private func clearUserDefaults() {
         UserDefaults.standard.set(nil, forKey: "username")
         UserDefaults.standard.set(nil, forKey: "password")
         UserDefaults.standard.set(true, forKey: "clock")
         UserDefaults.standard.set(true, forKey: "punch")
         UserDefaults.standard.set(false, forKey: "notifications")
         UserDefaults.standard.set(false, forKey: "developer")
+        UserDefaults.standard.set(true, forKey: "auth")
+        
+        needsAuthorization = true
         
         hideTools()
         hideDevTools()
