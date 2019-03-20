@@ -12,8 +12,6 @@
 		F3582EF5222F16BB00F292AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3582EF3222F16BB00F292AC /* Main.storyboard */; };
 		F3582EF7222F16BC00F292AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3582EF6222F16BC00F292AC /* Assets.xcassets */; };
 		F3582EFA222F16BC00F292AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3582EF8222F16BC00F292AC /* LaunchScreen.storyboard */; };
-		F3582F05222F16BC00F292AC /* AutoPunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3582F04222F16BC00F292AC /* AutoPunchTests.swift */; };
-		F3582F10222F16BC00F292AC /* AutoPunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */; };
 		F3CFFAAB22359B7800EB2097 /* JavaScriptHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */; };
 		F3CFFAAD22359BDF00EB2097 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFAAC22359BDF00EB2097 /* NotificationHandler.swift */; };
 /* End PBXBuildFile section */
@@ -50,8 +48,8 @@
 
 /* Begin PBXFileReference section */
 		F32904932239B6EA001F2D58 /* AutoPunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F34141552239B9E30064FB3E /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoPunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34141552239B9E30064FB3E /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchTests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchTests.xctest"; sourceTree = "<absolute>"; };
+		F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchUITests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchUITests.xctest"; sourceTree = "<absolute>"; };
 		F34141592239BA490064FB3E /* AutoPunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoPunch.entitlements; sourceTree = "<group>"; };
 		F3582EEF222F16BB00F292AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3582EF1222F16BB00F292AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +57,6 @@
 		F3582EF6222F16BC00F292AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3582EF9222F16BC00F292AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3582EFB222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3582F04222F16BC00F292AC /* AutoPunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchTests.swift; sourceTree = "<group>"; };
-		F3582F06222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPunchUITests.swift; sourceTree = "<group>"; };
-		F3582F11222F16BC00F292AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3CFFAAA22359B7800EB2097 /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
 		F3CFFAAC22359BDF00EB2097 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,11 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				F3582EEE222F16BB00F292AC /* AutoPunch */,
-				F3582F03222F16BC00F292AC /* AutoPunchTests */,
-				F3582F0E222F16BC00F292AC /* AutoPunchUITests */,
 				F32904932239B6EA001F2D58 /* AutoPunch.app */,
-				F34141552239B9E30064FB3E /* AutoPunchTests.xctest */,
-				F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,24 +107,6 @@
 				F3582EFB222F16BC00F292AC /* Info.plist */,
 			);
 			path = AutoPunch;
-			sourceTree = "<group>";
-		};
-		F3582F03222F16BC00F292AC /* AutoPunchTests */ = {
-			isa = PBXGroup;
-			children = (
-				F3582F04222F16BC00F292AC /* AutoPunchTests.swift */,
-				F3582F06222F16BC00F292AC /* Info.plist */,
-			);
-			path = AutoPunchTests;
-			sourceTree = "<group>";
-		};
-		F3582F0E222F16BC00F292AC /* AutoPunchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F3582F0F222F16BC00F292AC /* AutoPunchUITests.swift */,
-				F3582F11222F16BC00F292AC /* Info.plist */,
-			);
-			path = AutoPunchUITests;
 			sourceTree = "<group>";
 		};
 		F3CFFAAE22359DC300EB2097 /* Scripts */ = {
@@ -297,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3582F05222F16BC00F292AC /* AutoPunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3582F10222F16BC00F292AC /* AutoPunchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
