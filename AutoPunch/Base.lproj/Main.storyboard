@@ -115,8 +115,8 @@
                                     <action selector="notificationSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="bg5-KJ-6wr"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-BX-fw3" userLabel="Update Label">
-                                <rect key="frame" x="16" y="539" width="343" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-BX-fw3" userLabel="Update Label">
+                                <rect key="frame" x="16" y="554" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,14 +151,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yg0-BX-fw3" secondAttribute="trailing" constant="16" id="HrU-Qu-Vk5"/>
                             <constraint firstItem="vEz-OX-Del" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Nnu-9G-zeL"/>
                             <constraint firstItem="8ot-gP-IQe" firstAttribute="top" secondItem="vEz-OX-Del" secondAttribute="bottom" constant="50" id="O47-kK-qhl"/>
-                            <constraint firstItem="SLJ-JT-h8L" firstAttribute="top" secondItem="yg0-BX-fw3" secondAttribute="bottom" constant="7" id="OIE-n5-897"/>
+                            <constraint firstItem="SLJ-JT-h8L" firstAttribute="top" secondItem="yg0-BX-fw3" secondAttribute="bottom" id="OIE-n5-897"/>
                             <constraint firstItem="yg0-BX-fw3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Rhf-ze-H82"/>
                             <constraint firstItem="E3L-gd-Rls" firstAttribute="top" secondItem="uFj-pL-jwW" secondAttribute="bottom" constant="6" id="SGo-oP-xhe"/>
                             <constraint firstAttribute="trailing" secondItem="Pdl-q7-gtR" secondAttribute="trailing" id="Ugd-PG-SPa"/>
                             <constraint firstItem="uFj-pL-jwW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="261" id="Vvz-je-KiV"/>
                             <constraint firstAttribute="bottom" secondItem="Pdl-q7-gtR" secondAttribute="bottom" id="XUB-xn-d31"/>
                             <constraint firstItem="SLJ-JT-h8L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Xl2-bJ-nka"/>
-                            <constraint firstItem="yg0-BX-fw3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="495" id="XsR-kg-v0G"/>
+                            <constraint firstItem="yg0-BX-fw3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="510" id="XsR-kg-v0G"/>
                             <constraint firstItem="Pdl-q7-gtR" firstAttribute="top" secondItem="SLJ-JT-h8L" secondAttribute="bottom" id="XyK-1M-ZJk"/>
                             <constraint firstItem="E3L-gd-Rls" firstAttribute="leading" secondItem="MVM-5d-MTf" secondAttribute="trailing" constant="60" id="Zgo-cK-pR0"/>
                             <constraint firstItem="8ot-gP-IQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="bgg-bE-hiY"/>
