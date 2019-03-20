@@ -11,6 +11,6 @@ Welcome to **AutoPunch**, the tool designed for Best Buy employees tired of goin
 
 ## Changelog
 
-- **v2.1** -- Authorization will now check for correct credentials before giving access to the AutoPunch toolset
+- **v2.1 (03/20/19)** -- Authorization will now check for correct credentials before giving access to the AutoPunch toolset
 
-- **v2.0** -- Adds notifications configured to every Tuesday, Wednesday, Thursday, and Saturday that allow you to punch-in/out directly from the notification
+- **v2.0 (03/13/19)** -- Adds notifications configured to every Tuesday, Wednesday, Thursday, and Saturday that allow you to punch-in/out directly from the notification
