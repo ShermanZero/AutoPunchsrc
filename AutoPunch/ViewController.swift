@@ -87,8 +87,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegat
         usernameText.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         passwordText.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
-        authorizeButton.layer.cornerRadius = 6
-        resetButton.layer.cornerRadius = 6
+        authorizeButton.layer.cornerRadius = 5
+        resetButton.layer.cornerRadius = 5
     }
     
     //when the user presses the title (enabling/disabling dev mode)
