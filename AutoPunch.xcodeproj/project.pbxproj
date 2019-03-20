@@ -16,23 +16,6 @@
 		F3CFFAAD22359BDF00EB2097 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFFAAC22359BDF00EB2097 /* NotificationHandler.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F3582F01222F16BC00F292AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F3582EE4222F16BB00F292AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F3582EEB222F16BB00F292AC;
-			remoteInfo = AutoPunch;
-		};
-		F3582F0C222F16BC00F292AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F3582EE4222F16BB00F292AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F3582EEB222F16BB00F292AC;
-			remoteInfo = AutoPunch;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		F303442F2238311D00F375FB /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -48,8 +31,6 @@
 
 /* Begin PBXFileReference section */
 		F32904932239B6EA001F2D58 /* AutoPunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F34141552239B9E30064FB3E /* AutoPunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchTests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchTests.xctest"; sourceTree = "<absolute>"; };
-		F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoPunchUITests.xctest; path = "/Users/kieransherman/Documents/Xcode/AutoPunch/build/Debug-iphoneos/AutoPunchUITests.xctest"; sourceTree = "<absolute>"; };
 		F34141592239BA490064FB3E /* AutoPunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoPunch.entitlements; sourceTree = "<group>"; };
 		F3582EEF222F16BB00F292AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3582EF1222F16BB00F292AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,20 +44,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		F3582EE9222F16BB00F292AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3582EFD222F16BC00F292AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3582F08222F16BC00F292AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,42 +106,6 @@
 			productReference = F32904932239B6EA001F2D58 /* AutoPunch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F3582EFF222F16BC00F292AC /* AutoPunchTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3582F17222F16BC00F292AC /* Build configuration list for PBXNativeTarget "AutoPunchTests" */;
-			buildPhases = (
-				F3582EFC222F16BC00F292AC /* Sources */,
-				F3582EFD222F16BC00F292AC /* Frameworks */,
-				F3582EFE222F16BC00F292AC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F3582F02222F16BC00F292AC /* PBXTargetDependency */,
-			);
-			name = AutoPunchTests;
-			productName = AutoPunchTests;
-			productReference = F34141552239B9E30064FB3E /* AutoPunchTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F3582F0A222F16BC00F292AC /* AutoPunchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3582F1A222F16BC00F292AC /* Build configuration list for PBXNativeTarget "AutoPunchUITests" */;
-			buildPhases = (
-				F3582F07222F16BC00F292AC /* Sources */,
-				F3582F08222F16BC00F292AC /* Frameworks */,
-				F3582F09222F16BC00F292AC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F3582F0D222F16BC00F292AC /* PBXTargetDependency */,
-			);
-			name = AutoPunchUITests;
-			productName = AutoPunchUITests;
-			productReference = F34141562239B9E30064FB3E /* AutoPunchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,14 +127,6 @@
 							};
 						};
 					};
-					F3582EFF222F16BC00F292AC = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = F3582EEB222F16BB00F292AC;
-					};
-					F3582F0A222F16BC00F292AC = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = F3582EEB222F16BB00F292AC;
-					};
 				};
 			};
 			buildConfigurationList = F3582EE7222F16BB00F292AC /* Build configuration list for PBXProject "AutoPunch" */;
@@ -220,8 +143,6 @@
 			projectRoot = "";
 			targets = (
 				F3582EEB222F16BB00F292AC /* AutoPunch */,
-				F3582EFF222F16BC00F292AC /* AutoPunchTests */,
-				F3582F0A222F16BC00F292AC /* AutoPunchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,20 +155,6 @@
 				F3582EFA222F16BC00F292AC /* LaunchScreen.storyboard in Resources */,
 				F3582EF7222F16BC00F292AC /* Assets.xcassets in Resources */,
 				F3582EF5222F16BB00F292AC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3582EFE222F16BC00F292AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3582F09222F16BC00F292AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,34 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3582EFC222F16BC00F292AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3582F07222F16BC00F292AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F3582F02222F16BC00F292AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F3582EEB222F16BB00F292AC /* AutoPunch */;
-			targetProxy = F3582F01222F16BC00F292AC /* PBXContainerItemProxy */;
-		};
-		F3582F0D222F16BC00F292AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F3582EEB222F16BB00F292AC /* AutoPunch */;
-			targetProxy = F3582F0C222F16BC00F292AC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F3582EF3222F16BB00F292AC /* Main.storyboard */ = {
@@ -470,88 +350,6 @@
 			};
 			name = Release;
 		};
-		F3582F18222F16BC00F292AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				INFOPLIST_FILE = AutoPunchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunchTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoPunch.app/AutoPunch";
-			};
-			name = Debug;
-		};
-		F3582F19222F16BC00F292AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				INFOPLIST_FILE = AutoPunchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunchTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoPunch.app/AutoPunch";
-			};
-			name = Release;
-		};
-		F3582F1B222F16BC00F292AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				INFOPLIST_FILE = AutoPunchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AutoPunch;
-			};
-			name = Debug;
-		};
-		F3582F1C222F16BC00F292AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9HXQM93RCR;
-				INFOPLIST_FILE = AutoPunchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shermanzero.AutoPunchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AutoPunch;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,24 +367,6 @@
 			buildConfigurations = (
 				F3582F15222F16BC00F292AC /* Debug */,
 				F3582F16222F16BC00F292AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3582F17222F16BC00F292AC /* Build configuration list for PBXNativeTarget "AutoPunchTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3582F18222F16BC00F292AC /* Debug */,
-				F3582F19222F16BC00F292AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3582F1A222F16BC00F292AC /* Build configuration list for PBXNativeTarget "AutoPunchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3582F1B222F16BC00F292AC /* Debug */,
-				F3582F1C222F16BC00F292AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
